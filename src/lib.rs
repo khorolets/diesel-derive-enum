@@ -272,7 +272,7 @@ fn generate_postgres_impl(
 
             impl HasSqlType<#diesel_mapping> for Pg {
                 fn metadata(lookup: &Self::MetadataLookup) -> Self::TypeMetadata {
-                    lookup.lookup_type(#db_type)
+                    Self::TypeMetadata { oid: 0, array_oid: 0 }
                 }
             }
 
